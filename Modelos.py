@@ -71,7 +71,7 @@ class AbstractDecisionTree(AbstractClassificationProblem):
     criterion = ""
     tipo = ""
     
-    def __init__(self, dataset, X, X_train, X_test, y_train, y_test, target, max_depth=None, min_samples_leaf=1, min_samples_split=2, desc=""):
+    def __init__(self, X_train, X_test, y_train, y_test, target=[0,1], max_depth=None, min_samples_leaf=1, min_samples_split=2, desc=""):
         self.X_train = X_train
         self.X_test = X_test
         self.y_test = y_test
@@ -87,8 +87,8 @@ class AbstractDecisionTree(AbstractClassificationProblem):
                                                 splitter='best')
         self.desc = desc
 
-        self.target = list(dataset['isFraud'].unique())
-        self.feature_names = list(X.columns)
+        self.target = target
+        self.feature_names = list(X_train.columns)
         
         self.max_depth = max_depth
         self.min_samples_leaf = min_samples_leaf
