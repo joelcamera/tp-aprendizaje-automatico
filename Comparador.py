@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+from sklearn import metrics
+from sklearn.metrics import roc_curve
+
 class Comparator:
     models = []
     

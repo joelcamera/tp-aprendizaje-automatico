@@ -1,3 +1,11 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import roc_curve, auc
+import matplotlib.pyplot as plt
+from matplotlib.legend_handler import HandlerLine2D
+import time
+import numpy as np
+from functools import reduce
+
 class ParameterTuning():
     
     def __init__(self, decisionTreeCriterion, X_train, X_test, y_train, y_test):
