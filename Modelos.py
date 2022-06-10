@@ -132,9 +132,7 @@ class AbstractNeuralNetwork(AbstractClassificationProblem):
     solver = ''
     tipo = ''
     
-    def __init__(self, X, y, X_train, X_test, y_train, y_test, alpha=1e-5, hidden_layer_sizes=(15,), max_iter=5000, desc=""):
-        self.X = X
-        self.y = y
+    def __init__(self, X_train, X_test, y_train, y_test, alpha=1e-5, hidden_layer_sizes=(15,), max_iter=5000, desc=""):
         
         # https://scikit-learn.org/stable/modules/preprocessing.html
         self.X_train = self._scale(X_train)
